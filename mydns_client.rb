@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # info: simple custom dns server, client side script
-#       it updates its public IP address for the name periodically
+#       it updates its public ip address for the name periodically
 # platform: all
 # depends: none
 # requirements: ruby 1.8+

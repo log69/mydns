@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # info: simple custom dns server, server side script
-#       it serves IP addresses for the requested names
+#       it serves ip addresses for the requested names
 # platform: all
 # depends: none
 # requirements: ruby 1.8+
@@ -14,7 +14,7 @@ require 'socket'
 
 
 port  = 3333
-maxip = 1000 # number of maximum IP entries
+maxip = 1000 # number of maximum ip entries
 
 # listen on socket
 s = TCPServer.new port
