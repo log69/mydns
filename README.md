@@ -10,7 +10,7 @@ run server script on server side at boot time
 
 **mydns_server.rb**
 
-run client script on client machines with a name parameter periodically
+run client script on client machines with a name parameter at boot time, this goes into an infinite loop
 
 **mydns_client.rb "hello"**
 
