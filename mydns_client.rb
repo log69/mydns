@@ -9,7 +9,6 @@ name = ARGV[0]
 
 server = TCPSocket.new("localhost", 3333)
 server.puts name
-ip = server.gets[/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/] if name[0] == "?"
-puts ip
+puts server.gets[/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/] if name[0] == "?"
 
 server.close
