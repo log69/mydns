@@ -51,7 +51,7 @@ loop do
 
 				# secure db from flood by limiting the number
 				# of its entries
-				db = db[0..maxdb-1]
+				db = db[0..maxdb*2-1]
 			end
 
 		end
