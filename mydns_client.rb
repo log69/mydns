@@ -19,16 +19,16 @@ wait = 60 # time to wait between every update in seconds
 
 name = ARGV[0]
 loop do
-	server = TCPSocket.new(host, port)
-	server.puts name
+	s = TCPSocket.new(host, port)
+	s.puts name
 	# request for name resolution?
 	if name[0..0] == "?"
 		# get back source ip address
 		# sanitize input strongly
-		puts server.gets[/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/]
+		puts s.gets[/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/]
 		break
 	end
-	server.close
+	s.close
 
 	sleep wait
 end
