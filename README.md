@@ -5,7 +5,7 @@
 
 *It serves the data from memory, so no database backend needed, no external dependencies either.*
 
-*Don't forget to open the chosen port on the server.*
+*Don't forget to open the chosen port on the server and replace the host name value in the client script with the host server's domain name.*
 
 *It's also a good idea for security reasons to run this script with a non-privileged user in a separated environment if possible.*
 
