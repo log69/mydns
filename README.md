@@ -3,7 +3,7 @@
 ###simple ruby script for name resolution to avoid the need for an extermal dynamic dns service provider
 the idea is to run the script on a server with fix ip address that can store and serve ip addresses of machines
 
-it serves data from memory, so no database backend needed, no external dependencies
+it serves the data from memory, so no database backend needed, no external dependencies
 
 ###usage:###
 run server script on server side at boot time
