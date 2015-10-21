@@ -36,6 +36,9 @@ loop do
 			i = db.index(name[1..-1])
 			ip = ""
 			ip = db[i+1] if i
+			# forced wait time on failed lookup to block dos attacks
+			sleep 3 if not i
+			# send result ip
 			c.puts ip
 
 		else
