@@ -17,7 +17,7 @@ host = "localhost"
 port = 3333
 wait = 60 # time to wait between every update in seconds
 
-name = ARGV[0].to_s
+name = ARGV[0]
 loop do
 	s = TCPSocket.new(host, port)
 	s.puts name
@@ -31,4 +31,4 @@ loop do
 	s.close
 
 	sleep wait
-end
+end if name
