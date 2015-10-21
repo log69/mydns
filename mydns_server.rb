@@ -26,7 +26,6 @@ loop do
 		# get domain name and source ip address
 		# sanitize input strongly
 		name = c.gets[/[\?]*[\.\-_a-zA-Z0-9]+/][0..100]
-p name
 		ip = c.addr[-1][/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/]
 
 		# question mark makes it a request for name resolution
