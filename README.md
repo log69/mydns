@@ -16,11 +16,11 @@ Run server script on server side at boot time.
 
 Run client script on client machines at boot time with a name parameter, this goes into an infinite loop updating the IP address periodically.
 
-**mydns_client.rb "hello"**
+**mydns_client.rb hello**
 
 Run client script with name parameter starting with a question mark for name resolution, so server answers back with the matching IP address if it exists.
 
-**mydns_client.rb "?hello"**
+**mydns_client.rb ?hello**
 
 ###Requirements:###
 ruby 1.8+
