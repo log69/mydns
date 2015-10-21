@@ -56,7 +56,6 @@ loop do
 				# of its entries
 				db = db[0..maxip*2-1]
 			end
-
 		end
 	end
 end
