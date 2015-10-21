@@ -23,4 +23,4 @@ Run client script with name parameter starting with a question mark for name res
 **mydns_client.rb ?hello**
 
 ###Requirements:###
-ruby 1.8+
+Ruby 1.8+
