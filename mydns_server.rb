@@ -38,7 +38,8 @@ loop do
 				# name does not exist, so store name and ip
 				db += [name, ip]
 
-				# secure db from flood by limiting the number of its entries
+				# secure db from flood by limiting the number
+				# of its entries
 				db = db[0..255]
 			end
 
