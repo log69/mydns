@@ -1,4 +1,12 @@
 #!/usr/bin/env ruby
+# info: simple custom dns server, server side script
+#       it serves IP addresses for the requested names
+# platform: all
+# depends: none
+# requirements: ruby 1.8+
+# website: https://github.com/log69/mydns
+# copyright: Andras Horvath <mail@log69.com>
+# license: GPLv3+
 
 $SAFE = 2
 
