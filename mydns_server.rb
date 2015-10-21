@@ -54,5 +54,6 @@ loop do
 			end
 
 		end
+p db
 	end
 end

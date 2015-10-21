@@ -25,6 +25,7 @@ loop do
 		puts server.gets[/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/]
 		break
 	end
-end
+	server.close
 
-server.close
+	sleep wait
+end
