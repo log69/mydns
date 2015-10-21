@@ -14,6 +14,7 @@ require 'socket'
 
 
 port = 3333
+maxdb = 256
 
 # listen on socket
 s = TCPServer.new port
@@ -50,7 +51,7 @@ loop do
 
 				# secure db from flood by limiting the number
 				# of its entries
-				db = db[0..255]
+				db = db[2..maxdb+1]
 			end
 
 		end
