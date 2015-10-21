@@ -1,10 +1,10 @@
 # mydns
 
-##simple ruby script for dns to avoid the need for a dynamic dns service provider, usage:
+##simple ruby script for dns to avoid the need for a dynamic dns service provider
 
 run server script on server side at boot
 
-run client script with domain name parameter periodically from client machine, example:
+run client script with domain name parameter periodically from client machine that we want to reach, example:
 
 script "hello"
 
