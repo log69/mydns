@@ -1,6 +1,6 @@
 # mydns
 
-##simple ruby script for dns to avoid the need for a dynamic dns service provider
+###simple ruby script for dns to avoid the need for a dynamic dns service provider
 
 run server script on server side at boot
 
