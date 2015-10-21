@@ -5,8 +5,10 @@ $SAFE = 2
 require 'socket'
 
 
+port = 3333
+
 # listen on socket
-s = TCPServer.new 3333
+s = TCPServer.new port
 db = []
 
 loop do
