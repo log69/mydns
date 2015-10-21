@@ -21,7 +21,10 @@ name = ARGV[0]
 loop do
 	server = TCPSocket.new(host, port)
 	server.puts name
+	# request for name resolution?
 	if name[0..0] == "?"
+		# get back source ip address
+		# sanitize input strongly
 		puts server.gets[/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/]
 		break
 	end
