@@ -13,8 +13,8 @@ $SAFE = 2
 require 'socket'
 
 
-port = 3333
-maxdb = 256
+port  = 3333
+maxdb = 1000
 
 # listen on socket
 s = TCPServer.new port
