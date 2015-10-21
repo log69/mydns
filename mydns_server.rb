@@ -46,17 +46,24 @@ loop do
 			# name exists?
 			i = db.index(name)
 			if i
-				# name already exists, so update the ip
+				# name already exists, so update the ip,
+				# this part is thread safe because the array is written
+				# only when there is a match for the name
+				# and names are never deleted
 				db[i+1] = ip
 			else
-				# name does not exist, so store name and ip
+				# name does not exist, so store name and ip,
 				# secure service from flood and avoid dos attack
 				# by limiting the number of the entries
-				# from the same source ip
+				# from the same source ip,
+				# also consider this thread safe because the worst
+				# case is the double names, but names are never deleted
+				# and always only the first one is updated
 				db += [name, ip] if db.count(ip) < 10
 
 				# secure service from dos attack
-				# by limiting the number of maximum entries
+				# by limiting the number of maximum entries,
+				# thread safe
 				db = db[0..maxip*2-1]
 			end
 		end
