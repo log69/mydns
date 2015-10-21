@@ -5,6 +5,8 @@ the idea is to run the script on a server with fix ip address that can store and
 
 it serves the data from memory, so no database backend needed, no external dependencies
 
+don't forget to open the chosen port on the server
+
 ###usage:###
 run server script on server side at boot time
 
