@@ -21,7 +21,7 @@ loop do
 
 		# question mark makes it a request for name resolution
 		# command is ?name
-		if name[0] == "?"
+		if name[0..0] == "?"
 
 			# send back last ip from db
 			i = db.index(name[1..-1])
