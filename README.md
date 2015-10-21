@@ -1,9 +1,9 @@
 # mydns
 
-###simple ruby script for name resolution to avoid the need for an extermal dynamic dns service provider
-the idea is to run the script on a server with fix ip address that can store and serve ip addresses of machines
+###simple ruby script for custom name resolution
+the idea is to run the script on a server with fix ip address that can store and serve ip addresses of machines to avoid the need for an extermal dynamic dns service provider
 
-it serves the data from memory, so no database backend needed, no external dependencies
+it serves the data from memory, so no database backend needed, no external dependencies either
 
 don't forget to open the chosen port on the server
 
@@ -12,7 +12,7 @@ run server script on server side at boot time
 
 **mydns_server.rb**
 
-run client script on client machines with a name parameter at boot time, this goes into an infinite loop
+run client script on client machines at boot time with a name parameter, this goes into an infinite loop updating the ip address periodically
 
 **mydns_client.rb "hello"**
 
