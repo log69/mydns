@@ -50,10 +50,13 @@ loop do
 				db[i+1] = ip
 			else
 				# name does not exist, so store name and ip
-				db += [name, ip]
+				# secure service from flood and avoid dos attack
+				# by limiting the number of the entries
+				# from the same source ip
+				db += [name, ip] if db.count(ip) < 10
 
-				# secure db from flood by limiting the number
-				# of its entries
+				# secure service from dos attack
+				# by limiting the number of maximum entries
 				db = db[0..maxip*2-1]
 			end
 		end
