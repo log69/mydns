@@ -10,7 +10,7 @@
 
 $SAFE = 2
 
-require 'socket'
+require "socket"
 
 
 host = "localhost"
