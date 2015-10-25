@@ -41,9 +41,8 @@ loop do
 				ip = db[i+1]
 			else
 				# send deterministic random data on failed lookups
-				# to block trick attacks based on the name using hash
-				# so the attacker cannot figure out if the received
-				# ip is real or not
+				# to trick attackers using the hash of the name
+				# so the attacker cannot figure out if the name is real
 				h = Digest::SHA1.hexdigest(name[1..-1])
 				ip = "#{h[0..1].to_i(16)}.#{h[2..3].to_i(16)}.#{h[4..5].to_i(16)}.#{h[6..7].to_i(16)}"
 			end
