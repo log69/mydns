@@ -10,7 +10,8 @@
 
 $SAFE = 2
 
-require 'socket'
+require "socket"
+require "digest"
 
 
 port  = 3333
@@ -35,10 +36,18 @@ loop do
 			# send back last ip from db
 			i = db.index(name[1..-1])
 			ip = ""
-			ip = db[i+1] if i
-			# forced wait time on failed lookup to block dos attacks
-			sleep 3 if not i
-			# send result ip
+			if i
+				# send real ip belonging to the name if it exists
+				ip = db[i+1]
+			else
+				# send deterministic random data on failed lookups
+				# to block trick attacks based on the name using hash
+				# so the attacker cannot figure out if the received
+				# ip is real or not
+				h = Digest::SHA1.hexdigest(name[1..-1])
+				ip = "#{h[0..1].to_i(16)}.#{h[2..3].to_i(16)}.#{h[4..5].to_i(16)}.#{h[6..7].to_i(16)}"
+			end
+			# send it
 			c.puts ip
 
 		else
