@@ -11,7 +11,6 @@
 $SAFE = 2
 
 require "socket"
-require "digest"
 
 
 port  = 3333
@@ -36,18 +35,10 @@ loop do
 		# send back last ip from db
 		i = db.index(name[1..-1])
 		ip = ""
-		if i
-			# send real ip belonging to the name if it exists
-			ip = db[i+1]
-		else
-			# send deterministic random data on failed lookups
-			# to trick attackers using the hash of the name
-			# so the attacker cannot figure out if the name is real
-			h = Digest::SHA1.hexdigest(name[1..-1])
-			ip = "#{h[0..1].to_i(16)}.#{h[2..3].to_i(16)}.#{h[4..5].to_i(16)}.#{h[6..7].to_i(16)}"
-			# forced wait to block brute force attack
-			sleep 1
-		end
+		# send real ip belonging to the name if it exists
+		ip = db[i+1] if i
+		# forced wait to block brute force attack on failed lookups
+		sleep 1 if not i
 		# send it
 		# hanlde broken pipe error with recsue for the case
 		# when the client terminates waiting and so there is no socket
