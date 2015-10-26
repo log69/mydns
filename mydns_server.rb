@@ -45,6 +45,8 @@ loop do
 			# so the attacker cannot figure out if the name is real
 			h = Digest::SHA1.hexdigest(name[1..-1])
 			ip = "#{h[0..1].to_i(16)}.#{h[2..3].to_i(16)}.#{h[4..5].to_i(16)}.#{h[6..7].to_i(16)}"
+			# forced wait to block brute force attack
+			sleep 1
 		end
 		# send it
 		c.puts ip
