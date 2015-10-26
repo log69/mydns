@@ -18,6 +18,8 @@ port = 3333
 wait = 60 # time to wait between every update in seconds
 
 name = ARGV[0].to_s
+if name == "" then puts "error: specify a name"; exit 1 end
+
 loop do
 	s = TCPSocket.new(host, port)
 	s.puts name
@@ -31,4 +33,4 @@ loop do
 	s.close
 
 	sleep wait
-end if name != ""
+end
