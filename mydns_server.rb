@@ -49,7 +49,10 @@ loop do
 			sleep 1
 		end
 		# send it
-		c.puts ip
+		# hanlde broken pipe error with recsue for the case
+		# when the client terminates waiting and so there is no socket
+		# to send the data to
+		c.puts ip rescue nil
 
 	else
 
