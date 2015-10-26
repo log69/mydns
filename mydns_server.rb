@@ -32,7 +32,6 @@ loop do
 	# command is ?name
 	if name[0..0] == "?"
 
-		# send back last ip from db
 		i = db.index(name[1..-1])
 		ip = ""
 		# send real ip belonging to the name if it exists
