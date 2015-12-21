@@ -28,6 +28,7 @@ loop do
 		# get back source ip address
 		# sanitize input strongly
 		puts s.gets[/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/]
+		s.close
 		break
 	end
 	s.close
