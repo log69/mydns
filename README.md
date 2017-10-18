@@ -1,6 +1,6 @@
 # mydns
 
-###Simple ruby script for custom name resolution
+### Simple ruby script for custom name resolution
 *The idea is to run the script on a server with fix IP address that can store and serve IP addresses of machines to avoid the need for an external dynamic dns service provider.*
 
 *It serves the data from memory, so no database backend needed, no external dependencies either.*
@@ -9,7 +9,7 @@
 
 *It's also a good idea for security reasons to run this script with a non-privileged user in a separated environment if possible.*
 
-###Usage:###
+### Usage:
 Run server script on server side at boot time.
 
 **mydns_server.rb**
@@ -22,5 +22,5 @@ Run client script with name parameter starting with a question mark for name res
 
 **mydns_client.rb ?hello**
 
-###Requirements:###
+### Requirements:
 Ruby 1.8+
